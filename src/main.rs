@@ -1,8 +1,30 @@
+use std::thread;
+use std::time::Duration;
 fn main() {
     let width:usize = 17;
     let height:usize = 17;
     let mut grid: Vec<Vec<bool>> = vec![vec![false; width]; height];
-    grid[4][4] = true;
+    //#glider 
+    // grid[1][2] = true; 
+    // grid[2][3] = true;
+    // grid[3][1] = true;
+    // grid[3][2] = true;
+    // grid[3][3] = true;
+    
+    // blinker
+    // grid[8][7] = true;
+    // grid[8][8] = true;
+    // grid[8][9] = true;
+    
+    //le toad 
+    grid[8][7] = true;
+    grid[8][8] = true;
+    grid[8][9] = true;
+    grid[9][6] = true;
+    grid[9][7] = true;
+    grid[9][8] = true;
+    loop{
+        print!("\x1B[2J\x1B[1;1H");
     for y in 0..height {
 
         for x in 0..width {
@@ -11,10 +33,21 @@ fn main() {
             } else {
                 print!("⬜");
             }
-
+        
         }
-
         println!();
+    }
+    thread::sleep(Duration::from_millis(100));
+
+        grid = next_generation(&grid, width, height);
+        let mut alive = false;
+        for y in 0..height {
+            for x in 0..width {
+                if grid[y][x] { alive = true; }
+            }
+        }
+        if !alive { break; }
+    
 
     }
 
@@ -46,7 +79,12 @@ fn next_generation(grid: &Vec<Vec<bool>>, width: usize, height: usize) -> Vec<Ve
     for y in 0..height {
         for x in 0..width {
             let neighbors = count_neighbors(grid, x, y, width, height);
-            
+            if grid[y][x] && (neighbors == 2 || neighbors == 3) {
+                new_grid[y][x] = true;
+            }
+            if !grid[y][x] && neighbors == 3 {
+                new_grid[y][x] = true;
+            }
         }
     }
     return new_grid;
