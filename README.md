@@ -30,8 +30,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 **2. Clone the repo**
 ```bash
-git clone https://github.com/Slacknsss/game_of_life.git
-cd game_of_life
+git clone https://github.com/Slacknsss/P-3_Simon_GameOfLife.git
+cd P-3_Simon_GameOfLife
 ```
 
 **3. Run**
