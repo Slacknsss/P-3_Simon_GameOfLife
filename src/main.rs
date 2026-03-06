@@ -1,21 +1,21 @@
 use std::thread;
 use std::time::Duration;
+use rand::Rng;
 
 fn main() {
     // Taille de la grille
-    let width: usize = 17;
-    let height: usize = 17;
+    let width: usize = 80;
+    let height: usize = 50;
 
     // Création de la grille : toutes les cellules mortes au départ
     let mut grid: Vec<Vec<bool>> = vec![vec![false; width]; height];
-
-    // Pattern de départ : le Toad (oscillateur 2 ticks)
-    grid[8][7] = true;
-    grid[8][8] = true;
-    grid[8][9] = true;
-    grid[9][6] = true;
-    grid[9][7] = true;
-    grid[9][8] = true;
+    let mut rng = rand::thread_rng();
+    for y in 0..height{
+        for x in 0..width{
+            grid[y][x] = rng.gen_bool(0.4); // la 40 % de chances d etres vivante au spawn
+        }
+    }
+   
 
     // Boucle principale du jeu
     loop {
@@ -26,9 +26,9 @@ fn main() {
         for y in 0..height {
             for x in 0..width {
                 if grid[y][x] {
-                    print!("⬛"); // Cellule vivante
+                    print!("🟦"); // Cellule vivante
                 } else {
-                    print!("⬜"); // Cellule morte
+                    print!("⬜️"); // Cellule morte
                 }
             }
             println!();
@@ -55,7 +55,7 @@ fn main() {
 fn count_neighbors(grid: &Vec<Vec<bool>>, x: usize, y: usize, width: usize, height: usize) -> u8 {
     let mut count = 0;
 
-    // Les 8 directions possibles autour d'une cellule
+    // Les 8 directions possibles autour d'une cellule(j'ai fais expres de mettre en mode au millieux on a la cellule temoins , ta donc la posistions des differente cellules voisines )
     let voisin: [(i32, i32); 8] = [
         (-1, -1), (0, -1), (1, -1),
         (-1,  0),          (1,  0),
