@@ -1,5 +1,5 @@
-   0.004938708s  INFO prepare_target{force=false package_id=game_of_life v0.1.0 (/Users/slack/Desktop/P-3_Simon_GameOfLife) target="game_of_life"}: cargo::core::compiler::fingerprint: fingerprint error for game_of_life v0.1.0 (/Users/slack/Desktop/P-3_Simon_GameOfLife)/Check { test: false }/TargetInner { name: "game_of_life", doc: true, ..: with_path("/Users/slack/Desktop/P-3_Simon_GameOfLife/src/main.rs", Edition2024) }
-   0.006540833s  INFO prepare_target{force=false package_id=game_of_life v0.1.0 (/Users/slack/Desktop/P-3_Simon_GameOfLife) target="game_of_life"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/slack/Desktop/P-3_Simon_GameOfLife/target/debug/.fingerprint/game_of_life-3fc2f0108d8d645d/bin-game_of_life`
+   0.006237042s  INFO prepare_target{force=false package_id=game_of_life v0.1.0 (/Users/slack/Desktop/P-3_Simon_GameOfLife) target="game_of_life"}: cargo::core::compiler::fingerprint: fingerprint error for game_of_life v0.1.0 (/Users/slack/Desktop/P-3_Simon_GameOfLife)/Check { test: false }/TargetInner { name: "game_of_life", doc: true, ..: with_path("/Users/slack/Desktop/P-3_Simon_GameOfLife/src/main.rs", Edition2024) }
+   0.006252250s  INFO prepare_target{force=false package_id=game_of_life v0.1.0 (/Users/slack/Desktop/P-3_Simon_GameOfLife) target="game_of_life"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/slack/Desktop/P-3_Simon_GameOfLife/target/debug/.fingerprint/game_of_life-3fc2f0108d8d645d/bin-game_of_life`
 
 Caused by:
     No such file or directory (os error 2)
@@ -22,8 +22,8 @@ Stack backtrace:
   14: std::rt::lang_start::<()>::{closure#0}
   15: std::rt::lang_start_internal
   16: _main
-   0.019766792s  INFO prepare_target{force=false package_id=ncurses v6.0.1 target="ncurses"}: cargo::core::compiler::fingerprint: fingerprint error for ncurses v6.0.1/Check { test: false }/TargetInner { ..: lib_target("ncurses", ["lib"], "/Users/slack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ncurses-6.0.1/src/lib.rs", Edition2015) }
-   0.019785292s  INFO prepare_target{force=false package_id=ncurses v6.0.1 target="ncurses"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/slack/Desktop/P-3_Simon_GameOfLife/target/debug/.fingerprint/ncurses-798dc0f9fe3e7604/lib-ncurses`
+   0.009348042s  INFO prepare_target{force=false package_id=ncurses v6.0.1 target="ncurses"}: cargo::core::compiler::fingerprint: fingerprint error for ncurses v6.0.1/Check { test: false }/TargetInner { ..: lib_target("ncurses", ["lib"], "/Users/slack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ncurses-6.0.1/src/lib.rs", Edition2015) }
+   0.009357042s  INFO prepare_target{force=false package_id=ncurses v6.0.1 target="ncurses"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/slack/Desktop/P-3_Simon_GameOfLife/target/debug/.fingerprint/ncurses-798dc0f9fe3e7604/lib-ncurses`
 
 Caused by:
     No such file or directory (os error 2)
@@ -47,10 +47,8 @@ Stack backtrace:
   15: std::rt::lang_start::<()>::{closure#0}
   16: std::rt::lang_start_internal
   17: _main
-   0.019994708s  INFO prepare_target{force=false package_id=libc v0.2.182 target="libc"}: cargo::core::compiler::fingerprint: fingerprint dirty for libc v0.2.182/Check { test: false }/TargetInner { ..: lib_target("libc", ["lib"], "/Users/slack/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.182/src/lib.rs", Edition2021) }
-   0.019998750s  INFO prepare_target{force=false package_id=libc v0.2.182 target="libc"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(FailedToReadMetadata { path: "/Users/slack/Desktop/P-3_Simon_GameOfLife/target/debug/deps/liblibc-f7719414e0c5b56f.rmeta" }))
-   0.020713458s  INFO prepare_target{force=false package_id=game_of_life v0.1.0 (/Users/slack/Desktop/P-3_Simon_GameOfLife) target="game_of_life"}: cargo::core::compiler::fingerprint: fingerprint error for game_of_life v0.1.0 (/Users/slack/Desktop/P-3_Simon_GameOfLife)/Check { test: true }/TargetInner { name: "game_of_life", doc: true, ..: with_path("/Users/slack/Desktop/P-3_Simon_GameOfLife/src/main.rs", Edition2024) }
-   0.020717458s  INFO prepare_target{force=false package_id=game_of_life v0.1.0 (/Users/slack/Desktop/P-3_Simon_GameOfLife) target="game_of_life"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/slack/Desktop/P-3_Simon_GameOfLife/target/debug/.fingerprint/game_of_life-8fd4de6d156e9a20/test-bin-game_of_life`
+   0.010484000s  INFO prepare_target{force=false package_id=game_of_life v0.1.0 (/Users/slack/Desktop/P-3_Simon_GameOfLife) target="game_of_life"}: cargo::core::compiler::fingerprint: fingerprint error for game_of_life v0.1.0 (/Users/slack/Desktop/P-3_Simon_GameOfLife)/Check { test: true }/TargetInner { name: "game_of_life", doc: true, ..: with_path("/Users/slack/Desktop/P-3_Simon_GameOfLife/src/main.rs", Edition2024) }
+   0.010491375s  INFO prepare_target{force=false package_id=game_of_life v0.1.0 (/Users/slack/Desktop/P-3_Simon_GameOfLife) target="game_of_life"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/slack/Desktop/P-3_Simon_GameOfLife/target/debug/.fingerprint/game_of_life-8fd4de6d156e9a20/test-bin-game_of_life`
 
 Caused by:
     No such file or directory (os error 2)
@@ -73,6 +71,5 @@ Stack backtrace:
   14: std::rt::lang_start::<()>::{closure#0}
   15: std::rt::lang_start_internal
   16: _main
-    Checking libc v0.2.182
     Checking ncurses v6.0.1
 error: could not compile `ncurses` (lib) due to 59 previous errors
