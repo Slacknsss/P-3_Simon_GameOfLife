@@ -1,4 +1,4 @@
-# 🦀 Game of Life — Rust
+# 🦀 Game of Life in Rust
 
 Conway's Game of Life running in the terminal, built in Rust in one day as part of Epitech's **P³** (learning-focused punishment).
 
@@ -40,6 +40,13 @@ cargo run
 ```
 
 That's it. No extra setup needed.
+
+**4. Tests**
+```bash
+cargo test
+```
+
+Three tests on `next_generation` with known patterns: a blinker (oscillates every 2 generations), a block (never changes) and a glider (same shape one cell down and right after 4 generations). They also run on every push with GitHub Actions.
 
 ---
 

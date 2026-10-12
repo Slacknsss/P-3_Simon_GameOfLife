@@ -97,3 +97,46 @@ fn next_generation(grid: &Vec<Vec<bool>>, width: usize, height: usize) -> Vec<Ve
     }
     return new_grid;
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // Construit une grille avec les cellules (x, y) vivantes
+    fn grid_from(width: usize, height: usize, alive: &[(usize, usize)]) -> Vec<Vec<bool>> {
+        let mut grid = vec![vec![false; width]; height];
+        for &(x, y) in alive {
+            grid[y][x] = true;
+        }
+        grid
+    }
+
+    #[test]
+    fn blinker_oscillates() {
+        // Barre horizontale -> verticale -> horizontale
+        let horizontal = grid_from(5, 5, &[(1, 2), (2, 2), (3, 2)]);
+        let vertical = grid_from(5, 5, &[(2, 1), (2, 2), (2, 3)]);
+        let gen1 = next_generation(&horizontal, 5, 5);
+        assert_eq!(gen1, vertical);
+        assert_eq!(next_generation(&gen1, 5, 5), horizontal);
+    }
+
+    #[test]
+    fn block_is_stable() {
+        // Le carré 2x2 ne bouge jamais
+        let block = grid_from(4, 4, &[(1, 1), (2, 1), (1, 2), (2, 2)]);
+        assert_eq!(next_generation(&block, 4, 4), block);
+    }
+
+    #[test]
+    fn glider_moves_diagonally() {
+        // Après 4 générations le glider a la même forme, décalé d'une case en bas à droite
+        let glider = [(1, 0), (2, 1), (0, 2), (1, 2), (2, 2)];
+        let mut grid = grid_from(8, 8, &glider);
+        for _ in 0..4 {
+            grid = next_generation(&grid, 8, 8);
+        }
+        let moved: Vec<(usize, usize)> = glider.iter().map(|&(x, y)| (x + 1, y + 1)).collect();
+        assert_eq!(grid, grid_from(8, 8, &moved));
+    }
+}
